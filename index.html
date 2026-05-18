@@ -1,6 +1,6 @@
 <!-- Final Project
 Requirements
-[  ] Customized HTML Page #1
+[ y ] Customized HTML Page #1
 [  ] Customized HTML Page #2 
 [  ] Customized HTML Page #3
 [  ] Customized HTML Page #4
@@ -32,13 +32,26 @@ Select ONE Additional Feature to Add
        font-family: "Gaegu", sans-serif; 
    }   
 
-#artPort
-
    iframe{
     height:200px;
     width: 400px;
+    margin-top:130px ;
    }
-
+#port{
+padding-top:20px ;
+}
+#resume{
+  padding-left:60px ;
+ margin-top: -700px;
+}
+#abt{
+ margin-left: 1330px;
+ margin-top: -700px;
+}
+#contacts{
+  margin-left: 420px;
+  margin-top:135px ;
+}
     </style>
   </head>
 
@@ -48,17 +61,21 @@ Select ONE Additional Feature to Add
 <div class="typewriter"><h1> Welcome to my portfolio!</h1></div>
 
    <!-- Image links-->
-<a href="aboutme.html">
-<img src="images/abtme.cat.jpeg"width="300px" height="200px"/>
 
-<center id="artPort"><a href="art.html">
-<img src="images/french.cat.jpeg"/></center>
+<a href="art.html">
+<center><div id="port"><img src="images/french.cat.jpeg" width="700px" height="900px"/></div></center>
 
 <a href="resume.html">
-<img src="images/resume.cat.jpeg" width="200px" height="200px"/>
-</a>
+<div id="resume"><img src="images/resume.cat.jpeg" width="500px" height="400px"/>
+</a></div>
 
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4E0P1xs3JNmsNr5c5nFTZJ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<a href="aboutme.html">
+<div id ="abt"><img src="images/abtme.cat.jpeg"width="500px" height="400px"/></div>
+<a href="resume.html">
+ <div id = "contacts"> <img src="images/contact.cat.jpeg" width="100px" height="100px"/></div>
+
 
 
 
