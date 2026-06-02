@@ -5,30 +5,176 @@
     <title>Portfolio</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 
+
      <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
 
+
+
+
     <style>
+
       #hm{
     margin-top:-20px ;
     margin-left:-10px ;
   }
+
+ .parent-flex {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        margin-bottom: 20px;
+        overflow: auto;
+        white-space: nowrap;
+        margin-bottom: 0;
+        padding-top: 40px;
+      }
+
+      .parent-flex img {
+        margin: 10px;
+        height: 130px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      
+      .parent-flex img:hover {
+        transform: translateY(-20px) scale(1.05);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);      
+      }
+      
+      #painting-spotlight {
+        height: 500px;
+        margin-left: 30px;
+        margin-right: 30px;
+        
+      }
+      
+      #big-painting-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      #top-div-painting {
+        display:flex;
+        justify-content: space-between;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-bottom: 5px;
+        margin-top: 30px;
+        align-items: stretch;
+        height: 500px;
+      }
+      
+      #painting-info {
+        font-size: 40px;
+        font-family: "Gaegu", sans-serif;
+      }
+      
+      #painting-title {
+        font-size: 60px;
+        font-weight: bold;
+        font-family: "Gaegu", sans-serif;
+      }
+      
+      #info-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-right: 20px
+      }
+
     </style>
   </head>
-
+<!--style code above also Oliva-->
 
 
 
   <body>
-
 <a href="index.html">
 <div id="hm"><img src="images/home.cat.jpeg"width="200px" height="200px"/></div>
 </a>
  
 
+
+<!--Code credit to Olivia Marcolini Monteiro!-->
+   
+    <div id="top-div-painting">
+      <div id="info-div"> 
+        <div id="painting-title"
+             style="display: none"
+             >
+        Tittle of Piece  
+        </div>
+        <div id="painting-info"
+             style="display: none"
+             >
+        Piece Info
+      </div>
+      </div>
+      
+      <div id="big-painting-div">
+        <img id="painting-spotlight"
+             style="display: none"
+             src="images/2021_WebDevLogo_transpYear.png">
+      </div>
+    </div>
+
+ <div class="parent-flex fade-in">
+<img
+class="tiny-painting"
+src="portfolio stuff/purpleveil.jpeg"
+data-title="Grass Watching"
+data-info=""
+/>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+     $(document).ready(function () {
+    $(".tiny-painting").click(function () {
+      const newSrc = $(this).attr("src");
+      const newTitle = $(this).attr("data-title");
+      const newInfo = $(this).attr("data-info");
+
+      $("#painting-spotlight").fadeOut(400, function () {
+        $(this).attr("src", newSrc).fadeIn(400);
+      });
+
+      $("#painting-title").fadeOut(400, function () {
+        $(this).text(newTitle).fadeIn(400);
+      });
+
+      $("#painting-info").fadeOut(400, function () {
+        $(this).html(newInfo).fadeIn(400);
+      });
+    });
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const fadeElems = document.querySelectorAll('.fade-in');
+    fadeElems.forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, i * 300); 
+    });
+  });
+
+    </script>
+<!--Frome Olivia!-->
   </body>
-
-
-
 </html>
